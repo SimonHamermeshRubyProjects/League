@@ -1,0 +1,36 @@
+<%= render "league_navbar"%>
+
+<% if current_hater %>
+
+    <%if params[:page] == "leagues"%>
+    <H2> LEAGUE LANDING PAGE</H2>
+    <%= render "league_team"%>
+    <%end%>
+    
+    <%if params[:page] == "standings"%>
+    <H2> Standings LANDING PAGE</H2>
+    <%= render "league_standings"%>
+    <%end%>
+    
+    <%if params[:page] == "schedule"%>
+    <H2> Schedule LANDING PAGE</H2>
+    <%= render "league_schedule" %>
+    <%end%>
+    
+    <%if params[:page] == "team"%>
+    <H2> Team LANDING PAGE</H2>
+    <%= render "league_team"%>
+    <%end%>
+    
+    <%if params[:page] == "matchup"%>
+    <H2> MatchupE LANDING PAGE</H2>
+    <%= render "league_matchup"%>
+    <%end%>
+    
+    <%if params[:page] == "manager"%>
+    <H2> Manager LANDING PAGE</H2>
+    <%= render "league_manager"%>
+    <%end%>
+    
+    
+<%end%>

@@ -1,0 +1,15 @@
+<%= render "weekly_navbar"%>
+
+<% if current_hater %>
+
+    <%if params[:page] == "pools"%>
+    <H2> Pools LANDING PAGE</H2>
+    <%= render "weekly_pools"%>
+    <%end%>
+    
+    <%if params[:page] == "weekly_hate"%>
+    <H2> Weekly Hate LANDING PAGE</H2>
+    <%= render "weekly_hate"%>
+    <%end%>
+    
+<%end%>

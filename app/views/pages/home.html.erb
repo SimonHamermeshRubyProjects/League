@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class='container'>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Haters Home', root_path, class: 'navbar-brand' %>
+    </div>
+    
+    
+    
+    
+    
+    <div class="collapse navbar-collapse" id="main-nav-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+          <% if current_hater%>
+          
+          <span class="btn btn-info">Welcome <%= current_hater.email%></span>
+          <%= link_to "My Account","#",class:'btn btn-success navbar-btn'%>
+          <%= link_to "Sign Out", destroy_hater_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
+          <% else %>
+        
+           	<%= link_to "Log In", new_hater_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
+            <%= link_to "Sign Up", new_hater_registration_path, class: 'btn btn-success navbar-btn', method: :get %>
+        
+          
+          <%end%>
+          
+        <li><%= link_to "League Entry", league_home_path(page: "team") %></li>
+        <li><%= link_to "WeeklyLeagues Entry", weekly_hate_path %></li>
+          
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+<h2>MAIN ENTRY PAGE</h2>
