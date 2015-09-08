@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :haters
+  devise_for :haters, controllers: { sessions: "haters/sessions", registrations: "haters/registrations" }
   
   get '/league_home' => 'pages#league_home'
   get '/weekly_hate' => 'pages#weekly_hate'
-  get '/atheletes' => 'pages#athletes'
+  get '/athletes' => 'pages#athletes'
   
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
