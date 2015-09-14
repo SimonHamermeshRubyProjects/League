@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
     
+    
     def home
         
     end
@@ -13,7 +14,7 @@ class PagesController < ApplicationController
     end
     
     def athletes
-        
+     @hater = current_hater
     end
     
 end
