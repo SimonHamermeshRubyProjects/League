@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914142727) do
+ActiveRecord::Schema.define(version: 20150914152643) do
 
   create_table "hater_infos", force: :cascade do |t|
     t.string "hater_name"
@@ -36,6 +36,27 @@ ActiveRecord::Schema.define(version: 20150914142727) do
   end
 
   add_index "haters", ["email"], name: "index_haters_on_email", unique: true
+  add_index "haters", ["hater_name"], name: "index_haters_on_hater_name", unique: true
   add_index "haters", ["reset_password_token"], name: "index_haters_on_reset_password_token", unique: true
+
+  create_table "twelve_hater_leagues", force: :cascade do |t|
+    t.integer  "manager"
+    t.integer  "rules"
+    t.integer  "hater_1"
+    t.integer  "hater_2"
+    t.integer  "hater_3"
+    t.integer  "hater_4"
+    t.integer  "hater_5"
+    t.integer  "hater_6"
+    t.integer  "hater_7"
+    t.integer  "hater_8"
+    t.integer  "hater_9"
+    t.integer  "hater_10"
+    t.integer  "hater_11"
+    t.integer  "hater_12"
+    t.string   "league_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end

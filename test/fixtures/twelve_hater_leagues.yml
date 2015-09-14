@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager: 1
+  rules: 1
+  hater_1: 1
+  league_name: MyString
+
+two:
+  manager: 1
+  rules: 1
+  hater_1: 1
+  league_name: MyString
