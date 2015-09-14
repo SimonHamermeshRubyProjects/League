@@ -1,9 +1,18 @@
 <%= render "league_navbar"%>
 
+
 <% if current_hater %>
 
+    <br/>
+    <%= @hater.hater_name%>
+
+<% if params[:league]== nil%>
+    
+    <%= render "league_leagues"%>
+    
+<% else %>
+    
     <%if params[:page] == "leagues"%>
-    <H2> LEAGUE LANDING PAGE</H2>
     <%= render "league_leagues"%>
     <%end%>
     
@@ -28,9 +37,10 @@
     <%end%>
     
     <%if params[:page] == "manager"%>
+
     <H2> Manager LANDING PAGE</H2>
     <%= render "league_manager"%>
     <%end%>
     
-    
+    <%end%>
 <%end%>

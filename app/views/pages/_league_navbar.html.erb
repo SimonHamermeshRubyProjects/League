@@ -22,12 +22,12 @@
           <%= link_to "Sign Out", destroy_hater_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
         	
         	
-            <li><%= link_to "Leagues", league_home_path(page: "leagues") %></li>
-            <li><%= link_to "Standings",league_home_path(page: "standings") %></li>
-            <li><%= link_to "Schedule", league_home_path(page: "schedule") %></li>
-            <li><%= link_to "Team",league_home_path(page: "team") %></li>
-            <li><%= link_to "Matchup", league_home_path(page: "matchup") %></li>
-            <li><%= link_to "Manager",league_home_path(page: "manager") %></li>
+            <li><%= link_to "Leagues", league_home_path(page: "leagues", league:params[:league], view:"select") %></li>
+            <li><%= link_to "Standings",league_home_path(page: "standings", league:params[:league]) %></li>
+            <li><%= link_to "Schedule", league_home_path(page: "schedule", league:params[:league]) %></li>
+            <li><%= link_to "Team",league_home_path(page: "team", league:params[:league]) %></li>
+            <li><%= link_to "Matchup", league_home_path(page: "matchup", league:params[:league]) %></li>
+            <li><%= link_to "Manager",league_home_path(page: "manager", league:params[:league]) %></li>
        
        	    
         <% else %>

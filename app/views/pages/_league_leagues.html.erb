@@ -1,3 +1,46 @@
 </br>
-<H1>LEAGUE LEAGUE RENDER DO LIST</H1>
-<h2>Test of git</h2>
+<%= link_to "All Leagues", league_home_path(page: "leagues", league:params[:league], view:"all") %>
+<%= link_to "Just My Leagues", league_home_path(page: "leagues", league:params[:league], view:"select") %>
+
+
+
+<% if params[:view]== "all"%>
+   
+    <% @twelve_hater_leagues_all.each do |x| %>
+        <div class = "row">
+          <div class="col-md-4 col-md-offset-2">
+              <div class="well text-center ">
+                  <h4><%=x.league_name%> <%=x.manager %></h4>
+                <%= x.rules%>  <br/>
+                 Hater 1:<%= x.hater_1 %> Hater 2: <%= x.hater_2 %> Hater 3: <%= x.hater_3 %>Hater 4: <%= x.hater_4 %> Hater 5: <%= x.hater_5 %>
+                         Hater 6: <%= x.hater_6 %> Hater 7: <%= x.hater_7 %> Hater 8: <%= x.hater_8 %> Hater 9: <%= x.hater_9 %>
+                       Hater 10: <%= x.hater_10 %> Hater 11: <%= x.hater_11 %> Hater 12: <%= x.hater_12 %>
+                <li><%= link_to "Leagues", league_home_path(page: "leagues", league: x.id, view:params[:view]) %></li>
+              </div>
+          </div>
+        </div>
+    <%end%>
+
+<%elsif params[:view]== "select" %>
+
+    <%@twelve_hater_leagues_all.each do |x| %>
+        <% if x.hater_1 || x.hater_2 || x.hater_3 || x.hater_4 || x.hater_5 || x.hater_6 || x.hater_7 || x.hater_8 || x.hater_9 || x.hater_10 || x.hater_11 || x.hater_12 == current_hater.id %>
+           
+           <div class = "row">
+              <div class="col-md-4 col-md-offset-2">
+                  <div class="well text-center ">
+                      <h4><%=x.league_name%> <%=x.manager %></h4>
+                    <%= x.rules%>  <br/>
+                      Hater 1:<%= x.hater_1 %> Hater 2: <%= x.hater_2 %> Hater 3: <%= x.hater_3 %>Hater 4: <%= x.hater_4 %> Hater 5: <%= x.hater_5 %>
+                         Hater 6: <%= x.hater_6 %> Hater 7: <%= x.hater_7 %> Hater 8: <%= x.hater_8 %> Hater 9: <%= x.hater_9 %>
+                       Hater 10: <%= x.hater_10 %> Hater 11: <%= x.hater_11 %> Hater 12: <%= x.hater_12 %>
+                    <li><%= link_to "Leagues", league_home_path(page: "leagues", league: x.id, view:params[:view]) %></li>
+                  </div>
+              </div>
+            </div>
+            
+        <%end%>
+    <%end%>
+    
+    
+<%end%>
